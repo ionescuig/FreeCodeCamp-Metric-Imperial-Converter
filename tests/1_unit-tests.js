@@ -132,7 +132,7 @@ suite('Unit Tests', function(){
             done();
         });
 
-        test("L to Gal", function (done) {
+        test("L to gal", function (done) {
 
             let input = [5, "L"];
             let expected = 1.32086;
