@@ -120,7 +120,7 @@ suite('Unit Tests', function(){
     });
 
     suite("Function convertHandler.convert(num, unit)", function () {
-        test("Gal to L", function (done) {
+        test("gal to L", function (done) {
 
             let input = [5, "gal"];
             let expected = 18.9271;
