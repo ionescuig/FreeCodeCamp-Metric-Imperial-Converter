@@ -60,7 +60,7 @@ suite('Unit Tests', function(){
                 "MI",
                 "KM",
                 "LBS",
-                "KG,"
+                "KG",
             ];
             let output = [
                 "gal",
