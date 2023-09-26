@@ -96,7 +96,7 @@ function ConvertHandler() {
       case "mi":
         return "miles";
       case "l":
-        return "liters";
+        return "litres";
       case "kg":
         return "kilograms";
       default:
