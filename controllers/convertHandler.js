@@ -22,8 +22,6 @@ function checkDiv(possibleFraction){
 function ConvertHandler() {
   
   this.getNum = function (input) {
-    console.log("result.getNum")
-    console.log("result.getNum", numberStringSplitter(input))
     let result = numberStringSplitter(input)[0];
     let nums = checkDiv(result);
     
@@ -44,7 +42,6 @@ function ConvertHandler() {
   };
   
   this.getUnit = function (input) {
-    console.log("result.getUnit", numberStringSplitter(input))
     let result = numberStringSplitter(input)[1].toLowerCase();
 
     switch (result) {
@@ -99,7 +96,7 @@ function ConvertHandler() {
       case "mi":
         return "miles";
       case "l":
-        return "litres";
+        return "liters";
       case "kg":
         return "kilograms";
       default:

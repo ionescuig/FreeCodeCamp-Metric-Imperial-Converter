@@ -106,7 +106,7 @@ suite('Unit Tests', function(){
             let input = ["gal", "l", "mi", "km", "lbs", "kg"];
             let expect = [
                 "gallons",
-                "litres",
+                "liters",
                 "miles",
                 "kilometers",
                 "pounds",
