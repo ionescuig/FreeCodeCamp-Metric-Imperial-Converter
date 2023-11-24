@@ -6,7 +6,7 @@ function numberStringSplitter(input) {
   return [number[0], string];
 }
 
-function checkDiv(possibleFraction){
+function checkDiv(possibleFraction) {
 
   // 1/4/3 return false
   // 15 return["15"]
@@ -20,12 +20,12 @@ function checkDiv(possibleFraction){
 }
 
 function ConvertHandler() {
-  
-  this.getNum = function (input) {
+
+  this.getNum = function(input) {
     let result = numberStringSplitter(input)[0];
     let nums = checkDiv(result);
-    
-    if(!nums) {
+
+    if (!nums) {
       return undefined;
     }
 
@@ -34,14 +34,14 @@ function ConvertHandler() {
 
     result = parseFloat(num1) / parseFloat(num2);
 
-    if(isNaN(num1) || isNaN(num2)) {
+    if (isNaN(num1) || isNaN(num2)) {
       return undefined
     }
-    
+
     return result;
   };
-  
-  this.getUnit = function (input) {
+
+  this.getUnit = function(input) {
     let result = numberStringSplitter(input)[1].toLowerCase();
 
     switch (result) {
@@ -58,13 +58,14 @@ function ConvertHandler() {
       case "kg":
         return "kg";
       default:
-        return undefined;      
+        return undefined;
     }
   };
-  
+
   this.getReturnUnit = function(initUnit) {
+    if (!initUnit) { return undefined }
     let unit = initUnit.toLowerCase();
-  
+
     switch (unit) {
       case "km":
         return "mi";
@@ -79,15 +80,15 @@ function ConvertHandler() {
       case "kg":
         return "lbs";
       default:
-        return undefined;            
+        return undefined;
     }
   };
 
   this.spellOutUnit = function(initUnit) {
     let unit = initUnit.toLowerCase();
-    
+
     switch (unit) {
-       case "km":
+      case "km":
         return "kilometers";
       case "gal":
         return "gallons";
@@ -100,10 +101,10 @@ function ConvertHandler() {
       case "kg":
         return "kilograms";
       default:
-        return "don't know";            
+        return "don't know";
     }
-  };  
-  
+  };
+
   this.convert = function(initNum, initUnit) {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
@@ -126,21 +127,21 @@ function ConvertHandler() {
         break;
       case "l":
         result = initNum / galToL;
-        break;  
+        break;
       case "kg":
         result = initNum / lbsToKg;
         break;
       default:
-        result = undefined;            
+        result = undefined;
     }
-    
+
     return parseFloat(result.toFixed(5));
   };
-  
+
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     return `${initNum} ${this.spellOutUnit(initUnit)} converts to ${returnNum} ${this.spellOutUnit(returnUnit)}`;
   };
-  
+
 }
 
 module.exports = ConvertHandler;
